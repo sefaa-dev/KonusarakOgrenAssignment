@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using EnglishQuestionApp.Models.Identity
+@using Microsoft.AspNetCore.Http
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-light p-3" style="width:100%;">
+  <a class="navbar-brand" href="#">
+  </a>
+  @if (signInManager.IsSignedIn(Context.User))
+  {
+      <a asp-controller="Account" asp-action="Logout" class="btn btn-danger">Çıkış Yap</a>
+  }
+  else
+  {
+      <a asp-controller="Account" asp-action="Login" class="btn btn-success">Giriş Yap</a>
+  }
+</nav>
