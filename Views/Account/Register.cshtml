@@ -4,7 +4,22 @@
     ViewBag.Title = "Kayıt Ol";
 }
 
-<div class="form-page">
+@section Styles{
+    <style>
+        .login-page {
+            margin-inline: auto;
+            width: 400px !important;
+            background: linear-gradient(#141e30, #243b55);
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0,0,0,.6);
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+
+}
+<div class="login-page">
+
     <form asp-controller="Account" asp-action="Register" method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <!-- UserName input -->
